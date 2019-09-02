@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Yahtzee
 {
@@ -10,27 +9,21 @@ namespace Yahtzee
         public int FaceUp;
         public List<Die> dice = new List<Die>();
        
-        public Die()
+        public Die(int faces)
         {
             Random cast = new Random();
-            this.Faces = 6;
-            this.FaceUp = cast.Next(1, 6); 
+            this.Faces = faces;
+            this.FaceUp = cast.Next(1, faces); 
         }
 
-        public Die( int faceUp)
+        public Die(int faces, int faceUp)
         {
- 
+            
             this.FaceUp = faceUp;
         }
 
-        public List<Die> Dice(int count)
-        {
-            for (int cast = 1; cast < count; cast++)
-            {
-                Die die = new Die();
-                dice.Add(die); 
-            }
-            return dice;
-        }
+        
+
+
     }
 }

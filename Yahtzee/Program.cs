@@ -7,14 +7,9 @@ namespace Yahtzee
     {
         static void Main(string[] args)
         {
-            Die die = new Die();
-           
-            List<Die> dice = die.Dice(6);
+           Game game= new Game();
+           game.Play();
 
-            foreach (var cube in dice)
-                Console.WriteLine(cube.FaceUp);
-
-           // int index=dice.FindIndex(item=> item.FaceUp == )
         }
     }
 }
