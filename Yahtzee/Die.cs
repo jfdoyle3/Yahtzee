@@ -8,12 +8,12 @@ namespace Yahtzee
         public int Faces;
         public int FaceUp;
         public List<Die> dice = new List<Die>();
-       
+        private Random rnd=new Random();
+
         public Die(int faces)
         {
-            Random cast = new Random();
             this.Faces = faces;
-            this.FaceUp = cast.Next(1, faces); 
+            this.FaceUp = rnd.Next(1, faces); 
         }
 
         public Die(int faces, int faceUp)
@@ -22,8 +22,10 @@ namespace Yahtzee
             this.FaceUp = faceUp;
         }
 
-        
+        public void Roll()
+        {
+            this.FaceUp= rnd.Next(1,this.Faces);
 
-
+        }
     }
 }
